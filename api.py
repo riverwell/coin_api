@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import argparse
-from time import time
-import json
-import hashlib
-from textwrap import dedent
-from uuid import uuid4
-from urllib.parse import urlparse
-import subprocess
 
-import requests
+import subprocess
 from flask import Flask, jsonify, request
-import better_exceptions
 
 # ノードを作る
 app = Flask(__name__)
 
 
-# メソッドはPOSTで/transactions/transfer エンドポイントを作る。メソッドはPOSTなのでデータを送信する
+# メソッドはPOSTで/transfer エンドポイントを作る。メソッドはPOSTなのでデータを送信する
 @app.route('/transfer', methods=['POST'])
 def transfer():
     values = request.get_json()
@@ -40,7 +31,7 @@ def transfer():
     return jsonify(response), 201
 
 
-# メソッドはGETで、フルのブロックチェーンをリターンする/chainエンドポイントを作る
+# メソッドはPOSTで、ウォレットをリターンする/get_balanceエンドポイントを作る
 @app.route('/get_balance', methods=['POST'])
 def get_balance():
     values = request.get_json()
@@ -53,6 +44,7 @@ def get_balance():
     result = popen(
         'curl -X POST -H "Content-Type: application/json" -d \'{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x57b9469ec757d0ac4aeee0b532c1ae9bd7a38301", "latest"],"id":1}\' http://localhost:8575')
 
+    # todo 1/10^18にする
     response = {'message': f'{result}'}
     return jsonify(response), 201
 
