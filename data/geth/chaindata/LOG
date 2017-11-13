@@ -14,3 +14,24 @@
 23:52:05.494375 version@stat F·[1] S·546B[546B] Sc·[0.25]
 23:52:05.495180 db@janitor F·3 G·0
 23:52:05.495202 db@open done T·3.227445ms
+=============== Nov 14, 2017 (JST) ===============
+00:44:37.388379 db@close closing
+00:44:37.392673 db@close done T·4.275986ms
+=============== Nov 14, 2017 (JST) ===============
+00:44:49.414620 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+00:44:49.415172 version@stat F·[1] S·546B[546B] Sc·[0.25]
+00:44:49.415195 db@open opening
+00:44:49.415269 journal@recovery F·1
+00:44:49.416160 journal@recovery recovering @3
+00:44:49.490594 memdb@flush created L0@5 N·30330 S·1MiB "\x00-\x80..\u05c8_,v24287":"\xff\xf7\xa4..\x92\xa7\x18,v23027"
+00:44:49.491565 version@stat F·[2] S·1MiB[1MiB] Sc·[0.50]
+00:44:49.495223 db@janitor F·4 G·0
+00:44:49.495255 db@open done T·80.043177ms
+00:46:44.153171 table@compaction L0·2 -> L1·0 S·1MiB Q·31145
+00:46:44.306086 table@build created L1@8 N·20219 S·1MiB "\x00-\x80..\u05c8_,v24287":"\xff\xf7\xa4..\x92\xa7\x18,v23027"
+00:46:44.306160 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+00:46:44.307134 table@compaction committed F-1 S-327KiB Ke·0 D·10120 T·153.920568ms
+00:46:44.308869 table@remove removed @5
+00:46:44.310988 table@remove removed @2
+00:55:11.618839 db@close closing
+00:55:11.641434 db@close done T·22.589193ms

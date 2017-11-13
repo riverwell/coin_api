@@ -1,0 +1,5 @@
+miner.start()
+eth.sendTransaction({ from: eth.accounts[0], to: eth.accounts[1], value: 1000000000000000000 })
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+miner.start()
